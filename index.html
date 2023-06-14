@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Border with 4:3 Aspect Ratio and Inner Divisions</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            height: 0;
+            padding-bottom: 100%; /* 4:3 aspect ratio */
+            border: 2px solid #6ca5ff;
+            position: relative;
+            margin: 18px auto;
+            font-family: "仿宋", serif;
+            color: #6ca5ff;
+        }
+
+        .divider {
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 0;
+            border-top: 2px solid #6ca5ff;
+        }
+
+        .top {
+            top: 0%; /* 1/8 of the container height */
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 20px;
+        }
+
+        .middle {
+            top: 8%; /* 1/8 + 1/8 + 1/8 + 1/8 = 3/8 of the container height */
+        }
+
+        .bottom {
+            top: 72%; /* 1/8 + 1/8 + 1/8 + 1/8 + 3.5/8 = 11.5/16 of the container height */
+            display: flex;
+            align-items: center;
+            height: 28%; /* 设置容器的高度 */
+        }
+
+        .top-item {
+            flex: 1;
+            padding-top: 3%;
+            font-size: 22px;
+        }
+
+        .left {
+            padding-left: 5%;
+            text-align: left;
+        }
+
+        .right {
+            padding-right: 5%;
+            text-align: right;
+        }
+
+        .top-item img {
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="top">
+        <div class="top-item left">2023年6月15日</div>
+        <div class="top-item right">
+            <img src="logo.png">
+        </div>
+    </div>
+    <div class="divider middle">
+        <div class="middle-top" style="display: flex; padding-top: 2%; font-size: 26px">
+            <div class="middle-top-right left" style="flex: 1;">
+                四月二十八
+            </div>
+            <div class="middle-top-center" style="flex: 1; text-align: center;">
+                星期二<br>
+                sunday
+            </div>
+            <div style="flex: 1;">
+
+            </div>
+        </div>
+
+        <div class="middle-top-center" style="font-size: 438px;text-align: center; line-height: 80%">
+            15
+        </div>
+        <div class="middle-bottom" style="font-size: 46px;text-align: center; ">
+            January<br>
+            1月
+        </div>
+    </div>
+    <div class="divider bottom">
+        <div class="left">
+            如今一个人听歌总是会觉得失落
+        </div>
+    </div>
+</div>
+</body>
+</html>

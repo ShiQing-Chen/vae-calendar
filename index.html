@@ -8,24 +8,27 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             margin: 0;
-            padding: 0;
+            padding: 3vh 3vh;
         }
 
         .container {
-            width: 80%;
-            height: 0;
-            padding-bottom: 100%; /* 4:3 aspect ratio */
+            max-width: 540vh;
+            max-height: 720vh;
+            width: 75vh; /* 长宽比为 4:3，根据需要调整宽度 */
+            height: 90vh;
             border: 2px solid #6ca5ff;
-            position: relative;
-            margin: 18px auto;
-            font-family: "仿宋", serif;
+            box-sizing: border-box;
+        }
+
+        .calendar {
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
             color: #6ca5ff;
         }
 
         .divider {
-            position: absolute;
             left: 0;
             right: 0;
             height: 0;
@@ -33,81 +36,126 @@
         }
 
         .top {
-            top: 0%; /* 1/8 of the container height */
+            flex: 7;
+            line-height: 7vh;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            font-size: 20px;
+            font-size: 1.6vh;
         }
 
         .middle {
-            top: 8%; /* 1/8 + 1/8 + 1/8 + 1/8 = 3/8 of the container height */
+            flex: 72;
+            line-height: 72vh;
         }
 
         .bottom {
-            top: 72%; /* 1/8 + 1/8 + 1/8 + 1/8 + 3.5/8 = 11.5/16 of the container height */
+            flex: 22;
             display: flex;
             align-items: center;
-            height: 28%; /* 设置容器的高度 */
+            line-height: 18vh;
+            font-size: 2vh;
         }
 
         .top-item {
             flex: 1;
-            padding-top: 3%;
-            font-size: 22px;
         }
 
         .left {
-            padding-left: 5%;
             text-align: left;
+            padding-left: 3vh;
         }
 
         .right {
-            padding-right: 5%;
             text-align: right;
+            padding-right: 3vh;
         }
 
         .top-item img {
             width: 20%;
         }
+
+        .middle-top {
+            display: flex;
+            padding-top: 1vh;
+            line-height: 4vh;
+            font-size: 2.4vh;
+        }
+
+        .middle-top-left {
+            flex: 1;
+        }
+
+        .middle-top-center {
+            flex: 1;
+            text-align: center;
+        }
+
+        .middle-top-right {
+            flex: 1;
+        }
+
+        .middle-center {
+            font-size: 42vh;
+            text-align: center;
+            line-height: 42vh;
+            font-family: "Microsoft YaHei", "微软雅黑", "Arial", sans-serif;
+        }
+
+        .middle-bottom {
+            font-size: 4.8vh;
+            text-align: center;
+            line-height: 6vh;
+            padding-bottom: 1vh;
+        }
+
+        .bottom-content {
+            flex: 1;
+        }
     </style>
 </head>
 <body>
 <div class="container">
-    <div class="top">
-        <div class="top-item left">2023年6月15日</div>
-        <div class="top-item right">
-            <img src="logo.png">
-        </div>
-    </div>
-    <div class="divider middle">
-        <div class="middle-top" style="display: flex; padding-top: 2%; font-size: 26px">
-            <div class="middle-top-right left" style="flex: 1;">
-                四月二十八
-            </div>
-            <div class="middle-top-center" style="flex: 1; text-align: center;">
-                星期二<br>
-                sunday
-            </div>
-            <div style="flex: 1;">
-
+    <div class="calendar">
+        <div class="top">
+            <div class="top-item left">2023年6月15日</div>
+            <div class="top-item right">
+                <img src="logo.png">
             </div>
         </div>
-
-        <div class="middle-top-center" style="font-size: 438px;text-align: center; line-height: 80%">
-            15
+        <div class="divider middle">
+            <div class="middle-top">
+                <div class="middle-top-left">
+                    <div class="left">
+                        四月二十八
+                    </div>
+                </div>
+                <div class="middle-top-center">
+                    <div>星期二</div>
+                    <div>sunday</div>
+                </div>
+                <div class="middle-top-right">
+                    <div class="right">
+                        冬至
+                    </div>
+                </div>
+            </div>
+            <div class="middle-center">
+                17
+            </div>
+            <div class="middle-bottom">
+                January<br>
+                1月
+            </div>
         </div>
-        <div class="middle-bottom" style="font-size: 46px;text-align: center; ">
-            January<br>
-            1月
-        </div>
-    </div>
-    <div class="divider bottom">
-        <div class="left">
-            如今一个人听歌总是会觉得失落
+        <div class="divider bottom">
+            <div class="bottom-content left">
+                如今一个人听歌总是会觉得失落
+            </div>
         </div>
     </div>
 </div>
+
 </body>
 </html>

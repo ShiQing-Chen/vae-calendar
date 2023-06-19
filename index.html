@@ -3,6 +3,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Vae日历</title>
+
+    <script src="js/js-calendar-converter.js"></script>
+
     <style>
         @font-face {
             font-family: "Deng";
@@ -147,6 +150,7 @@
             align-items: center;
             flex-direction: column;
         }
+
         .middle-center-text {
             position: absolute;
             top: 24vh;
@@ -178,7 +182,7 @@
 <div class="container">
     <div class="calendar">
         <div class="top">
-            <div class="top-item left">2023年6月15日</div>
+            <div class="top-item left" id="cnSolar">2023年6月15日</div>
             <div class="top-item right">
                 <img src="logo.png">
             </div>
@@ -186,30 +190,30 @@
         <div class="divider middle">
             <div class="middle-top">
                 <div class="middle-top-left">
-                    <div class="left">
+                    <div class="left" id="cnLunar">
                         四月二十八
                     </div>
                 </div>
                 <div class="middle-top-center">
-                    <div class="middle-top-center-top">星期二</div>
-                    <div class="middle-top-center-bottom">sunday</div>
+                    <div class="middle-top-center-top" id="cnWeek">星期二</div>
+                    <div class="middle-top-center-bottom" id="englishWeek">sunday</div>
                 </div>
                 <div class="middle-top-right">
-                    <div class="right">
+                    <div class="right" id="festival">
                         冬至
                     </div>
                 </div>
             </div>
             <div class="middle-center">
-                <div class="middle-center-text">
+                <div class="middle-center-text" id="cDay">
                     17
                 </div>
             </div>
             <div class="middle-bottom">
-                <div class="middle-bottom-top">
+                <div class="middle-bottom-top" id="cEnglishMonth">
                     December
                 </div>
-                <div class="middle-bottom-bottom">
+                <div class="middle-bottom-bottom" id="cMonth">
                     12月
                 </div>
             </div>
@@ -223,4 +227,17 @@
 </div>
 
 </body>
+<script>
+    const now = new Date();
+    const solar2lunar = calendar.solar2lunar(now.getFullYear(), now.getMonth() + 1, now.getDate());
+    document.getElementById('cnSolar').textContent = solar2lunar.cSolarDate;
+    document.getElementById('cnLunar').textContent = solar2lunar.IMonthCn + solar2lunar.IDayCn;
+    document.getElementById('cnWeek').textContent = solar2lunar.ncWeek;
+    document.getElementById('englishWeek').textContent = solar2lunar.englishWeek;
+    document.getElementById('festival').textContent = solar2lunar.festival;
+    document.getElementById('cDay').textContent = solar2lunar.cDay;
+    document.getElementById('cMonth').textContent = solar2lunar.cMonth + "月";
+    document.getElementById('cEnglishMonth').textContent = solar2lunar.cEnglishMonth;
+
+</script>
 </html>

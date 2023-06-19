@@ -4,6 +4,36 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Vae日历</title>
     <style>
+        @font-face {
+            font-family: "Deng";
+            src: url("fonts/Deng.ttf");
+        }
+
+        @font-face {
+            font-family: "din1451alt G";
+            src: url("fonts/din1451alt G.ttf");
+        }
+
+        @font-face {
+            font-family: "EngschriftDINDOT";
+            src: url("fonts/EngschriftDINDOT.otf");
+        }
+
+        @font-face {
+            font-family: "msyhbd";
+            src: url("fonts/msyhbd.ttc");
+        }
+
+        @font-face {
+            font-family: "SourceHanSerifSC-SemiBold";
+            src: url("fonts/SourceHanSerifSC-SemiBold.otf");
+        }
+
+        @font-face {
+            font-family: "SOURCEHANSANSSC-BOLD";
+            src: url("fonts/SOURCEHANSANSSC-BOLD.OTF");
+        }
+
         body {
             display: flex;
             justify-content: center;
@@ -42,12 +72,14 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            font-size: 1.6vh;
+            font-size: 1.2vh;
+            font-family: 'msyhbd', sans-serif;
         }
 
         .middle {
             flex: 72;
             line-height: 72vh;
+            padding: 1vh 0;
         }
 
         .bottom {
@@ -78,13 +110,14 @@
 
         .middle-top {
             display: flex;
-            padding-top: 1vh;
+            /*padding-top: 1vh;*/
             line-height: 4vh;
-            font-size: 2.4vh;
+            font-size: 3.0vh;
         }
 
         .middle-top-left {
             flex: 1;
+            font-family: 'Deng', sans-serif;
         }
 
         .middle-top-center {
@@ -92,26 +125,54 @@
             text-align: center;
         }
 
+        .middle-top-center-top {
+            font-family: 'Deng', sans-serif;
+        }
+
+        .middle-top-center-bottom {
+            font-family: 'SOURCEHANSANSSC-BOLD', sans-serif;
+            font-size: 2.0vh;
+        }
+
         .middle-top-right {
+            font-family: 'Deng', sans-serif;
             flex: 1;
         }
 
         .middle-center {
-            font-size: 42vh;
+            font-size: 52vh;
             text-align: center;
             line-height: 42vh;
-            font-family: "Microsoft YaHei", "微软雅黑", "Arial", sans-serif;
+            height: 42vh;
+            font-family: 'EngschriftDINDOT', sans-serif;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .middle-center-text {
+            position: absolute;
+            top: 24vh;
         }
 
         .middle-bottom {
-            font-size: 4.8vh;
             text-align: center;
             line-height: 6vh;
-            padding-bottom: 1vh;
+            /*padding-bottom: 1vh;*/
+        }
+
+        .middle-bottom-top {
+            font-family: 'din1451alt G', sans-serif;
+            font-size: 4.6vh;
+        }
+
+        .middle-bottom-bottom {
+            font-family: 'SOURCEHANSANSSC-BOLD', sans-serif;
+            font-size: 4.2vh;
         }
 
         .bottom-content {
             flex: 1;
+            font-family: 'SourceHanSerifSC-SemiBold', sans-serif;
         }
     </style>
 </head>
@@ -132,8 +193,8 @@
                     </div>
                 </div>
                 <div class="middle-top-center">
-                    <div>星期二</div>
-                    <div>sunday</div>
+                    <div class="middle-top-center-top">星期二</div>
+                    <div class="middle-top-center-bottom">sunday</div>
                 </div>
                 <div class="middle-top-right">
                     <div class="right">
@@ -142,11 +203,17 @@
                 </div>
             </div>
             <div class="middle-center">
-                17
+                <div class="middle-center-text">
+                    17
+                </div>
             </div>
             <div class="middle-bottom">
-                January<br>
-                1月
+                <div class="middle-bottom-top">
+                    December
+                </div>
+                <div class="middle-bottom-bottom">
+                    12月
+                </div>
             </div>
         </div>
         <div class="divider bottom">

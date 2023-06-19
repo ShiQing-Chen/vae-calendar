@@ -89,7 +89,6 @@
             flex: 22;
             display: flex;
             align-items: center;
-            line-height: 18vh;
         }
 
         .top-item {
@@ -175,6 +174,10 @@
             flex: 1;
             font-family: 'SourceHanSerifSC-SemiBold', sans-serif;
             font-size: 1.8vh;
+            padding-right: 3vh;
+            display: flex;
+            align-items: center;
+            height: 18vh;
         }
     </style>
 </head>
@@ -219,7 +222,7 @@
             </div>
         </div>
         <div class="divider bottom">
-            <div class="bottom-content left">
+            <div class="bottom-content left" id="bottom-content">
                 如今一个人听歌总是会觉得失落
             </div>
         </div>
@@ -239,6 +242,25 @@
     document.getElementById('cMonth').textContent = solar2lunar.cMonth + "月";
     document.getElementById('cEnglishMonth').textContent = solar2lunar.cEnglishMonth;
 
+
+    const xhr = new XMLHttpRequest();
+    const url = 'https://v1.hitokoto.cn/?c=k';
+
+    xhr.open('GET', url, true);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // 在这里处理响应数据
+            const response = JSON.parse(xhr.responseText);
+            if (response && response.hitokoto) {
+                document.getElementById('bottom-content').textContent = response.hitokoto;
+            }
+        }
+    };
+
+    xhr.send();
+
+
 </script>
 
 <script>
@@ -250,5 +272,13 @@
         s.parentNode.insertBefore(hm, s);
     })();
 </script>
-
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://valentine.farmeryun.com/wv.js?0efd2a92801f452eb98d3e0f779e100f";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
 </html>

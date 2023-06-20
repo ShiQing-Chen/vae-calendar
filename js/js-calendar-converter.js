@@ -504,13 +504,13 @@ var calendar = (function () {
             //星期几
             var nWeek = objDate.getDay(),
                 cWeek = this.nStr1[nWeek],
-                englishWeek = this.nStr4[nWeek];
+                englishWeek = this.nStr4[nWeek-1];
             //数字表示周几顺应天朝周一开始的惯例
             if (nWeek === 0) {
                 nWeek = 7;
             }
 
-            var englishMonth = this.nStr5[m];
+            var englishMonth = this.nStr5[m-1];
 
             //农历年
             var year = i;
@@ -696,4 +696,3 @@ var calendar = (function () {
     return calendar;
 
 })();
-//# sourceMappingURL=js-calendar-converter.js.map
